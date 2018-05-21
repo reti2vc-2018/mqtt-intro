@@ -47,7 +47,7 @@ public class MQTTPublisher {
     public void start() {
         try {
             MqttConnectOptions options = new MqttConnectOptions();
-            // no persistent session
+            // persistent, durable connection
             options.setCleanSession(false);
             options.setWill(client.getTopic("homestation/LWT"), "I'm gone. Bye.".getBytes(), 0, false);
 
